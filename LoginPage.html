@@ -55,16 +55,26 @@
 </head>
 <body>
 	<div class="container">
-		<form class="login-form" action="" method="POST">
-			<h1>Login</h1>
-			<label for="username"><b>Username</b></label>
-			<input type="text" placeholder="Enter Username" name="username" required>
-
-			<label for="password"><b>Password</b></label>
-			<input type="password" placeholder="Enter Password" name="password" required>
-
-			<button type="submit">Login</button>
+		<form>
+		  <h2>Login</h2>
+		  <label for="username">Username:</label>
+		  <input type="text" id="username" name="username" placeholder="Enter your username">
+		  <label for="password">Password:</label>
+		  <input type="password" id="password" name="password" placeholder="Enter your password">
+		  <button type="submit" onclick="validate()">Login</button>
 		</form>
-	</div>
-</body>
-</html>
+	  </div>
+	  <script>
+		function validate() {
+		  var username = document.getElementById("username").value;
+		  var password = document.getElementById("password").value;
+		  if (username === "admin" && password === "admin") {
+			alert("Login successful!");
+		  } else {
+			alert("Invalid username or password.");
+		  }
+		}
+	  </script>
+	</body>
+  </html>
+
