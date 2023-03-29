@@ -1,58 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f2f2f2;
-      }
 
-      .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-      }
-
-      .login-form {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        max-width: 400px;
-        width: 100%;
-      }
-
-      input[type="text"],
-      input[type="password"] {
-        padding: 10px;
-        margin: 5px 0;
-        border: none;
-        border-radius: 3px;
-        width: 100%;
-      }
-
-      button[type="submit"] {
-        background-color: #4caf50;
-        color: white;
-        padding: 10px;
-        border: none;
-        border-radius: 3px;
-        width: 100%;
-        cursor: pointer;
-      }
-
-      @media screen and (max-width: 480px) {
-        .login-form {
-          padding: 10px;
-        }
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="/E-TITLE-COLLECTION-SYSTEM/styles/loginPage.css"
+    />
   </head>
   <body>
     <div class="container">
@@ -75,16 +32,7 @@
         <button type="submit" onclick="validate()">Login</button>
       </form>
     </div>
-    <script>
-      function validate() {
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-        if (username === "admin" && password === "admin") {
-          alert("Login successful!");
-        } else {
-          alert("Invalid username or password.");
-        }
-      }
-    </script>
+
+    <script src="/E-TITLE-COLLECTION-SYSTEM/script/loginPage.js"></script>
   </body>
 </html>
