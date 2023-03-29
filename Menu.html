@@ -12,10 +12,16 @@
     <div class="container">
       <h1>Courier E-Tracking System</h1>
       <div class="menu">
-        <button onclick="link" class="Access Camera">Access Camera</button>
+        <button id="start-camera">Start Camera</button>
+        <video id="video" width="500" height="500" autoplay></video>
+        <button id="click-photo">Click Photo</button>
+        <canvas id="canvas" width="500" height="400"></canvas>
+
         <button onclick="link" class="Database">Database</button>
         <button onclick="link" class="Search">Search</button>
       </div>
     </div>
+
+    <script src="/E-TITLE-COLLECTION-SYSTEM/scripts/menu.js"></script>
   </body>
 </html>
