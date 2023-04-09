@@ -11,28 +11,43 @@
       href="/E-TITLE-COLLECTION-SYSTEM/styles/loginPage.css"
     />
   </head>
+  <style>
+    .container {
+      position: absolute;
+       top: 250px;
+       right: 600px;
+      margin: auto;
+      width: auto;
+      border: 5px solid #000000;
+      padding: 20px;
+    }
+    </style>
   <body>
+      
     <div class="container">
       <form>
         <h2>Login</h2>
-        <label for="username">Username:</label>
+        <label for="username"><b>Username:</b></label>
         <input
+        
+          style="text-align:center;"
           type="text"
           id="username"
           name="username"
           placeholder="Enter your username"
         />
-        <label for="password">Password:</label>
+        <label for="password"><h1 style="text-align:center;"></h1><b>Password:</b></h1></label>
         <input
+          style="text-align:center;"
           type="password"
           id="password"
           name="password"
           placeholder="Enter your password"
         />
-        <button type="submit" onclick="validate()">Login</button>
+        <button type="submit" onclick="validate()"><b>Login</b></button>
       </form>
     </div>
-
+    
     <script src="/E-TITLE-COLLECTION-SYSTEM/script/loginPage.js"></script>
   </body>
 </html>
