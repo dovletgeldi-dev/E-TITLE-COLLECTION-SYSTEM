@@ -11,17 +11,28 @@
     />
     <title>Search</title>
   </head>
+  <style>
+    .container {
+      position: absolute;
+       top: 300px;
+       right: 550px;
+      margin: auto;
+      width: auto;
+      border: 5px solid #000000;
+      padding: 20px;
+    }
+    </style>
   <body>
     <div class="container">
       <form action="search.php" method="GET">
-        <label for="filename">Enter Rider Name:</label>
+        <b><label for="filename">Enter Rider's Name:</label></b>
         <input
           type="text"
           id="filename"
           name="filename"
-          placeholder="Enter name..."
+          placeholder="ENTER NAME"
         />
-        <input type="submit" value="Search" />
+        <b><input type="submit" value="SEARCH" /></b>
       </form>
     </div>
   </body>
