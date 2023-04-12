@@ -13,6 +13,7 @@
     <script src="/E-TITLE-COLLECTION-SYSTEM/scripts/loginPage.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <style>
+        h2 {text-align: center;}
       body {font-family: Arial, Helvetica, sans-serif;}
       
       /* Full-width input fields */
@@ -68,6 +69,7 @@
         padding-top: 16px;
       }
       
+
       /* The Modal (background) */
       .modal {
         display: none; /* Hidden by default */
@@ -82,13 +84,20 @@
         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         padding-top: 60px;
       }
-      
+      .button {
+        margin: 0;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
       /* Modal Content/Box */
       .modal-content {
         background-color: #fefefe;
         margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
         border: 1px solid #888;
-        width: 80%; /* Could be more or less, depending on screen size */
+        width: 40%; /* Could be more or less, depending on screen size */
       }
       
       /* The Close Button (x) */
@@ -139,8 +148,9 @@
       
       <h2>Login Form</h2>
       
+      <div class= "button">
       <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-      
+    </div>
       <div id="id01" class="modal">
         
         <form class="modal-content animate" action="/action_page.php" method="post">
