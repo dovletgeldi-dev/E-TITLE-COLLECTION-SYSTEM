@@ -9,3 +9,5 @@ function validate() {
     alert("Invalid username or password.");
   }
 }
+
+console.log("hello world");
