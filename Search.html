@@ -9,21 +9,25 @@
       rel="stylesheet"
       href="/E-TITLE-COLLECTION-SYSTEM/styles/search.css"
     />
-    <title>Search</title>
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+  />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <title>Search Driver</title>
   </head>
   <style>
-    .container {
-      position: absolute;
-       top: 300px;
-       right: 550px;
-      margin: auto;
-      width: auto;
-      border: 5px solid #000000;
-      padding: 20px;
-    }
+  
+
     </style>
   <body>
-    <div class="container">
+    <!-- <div class="container">
       <form action="search.php" method="GET">
         <b><label for="filename">Enter Rider's Name:</label></b>
         <input
@@ -34,6 +38,23 @@
         />
         <b><input type="submit" value="SEARCH" /></b>
       </form>
-    </div>
+    </div> -->
+
+    <main>
+      <div class="wrapper">
+        <div class="container">
+          <h2>Search Driver</h2>
+
+          <form role="search" method="get" class="search-form form" action="">
+            <label>
+              
+                <span class="screen-reader-text">Search for...</span>
+                <input type="search" class="search-field" placeholder="Enter Rider's Name" value="" name="s" title="" />
+            </label>
+            
+            <input type="submit" class="search-submit button" value="&#xf002" />
+        </div>
+      </div>
+    </main>
   </body>
 </html>
