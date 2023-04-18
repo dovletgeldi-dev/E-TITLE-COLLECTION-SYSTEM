@@ -1,77 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="/E-TITLE-COLLECTION-SYSTEM/styles/register.css"
-    />
-    <title>Register</title>
-  </head>
-  <style>
-    .container {
-      position: absolute;
-       top: 250px;
-       right: 600px;
-      margin: auto;
-      width: auto;
-      border: 5px solid #000000;
-      padding: 20px;
-    }
-    </style>
-  <body>
-    <div class="container">
-      <form action="save-data.php" method="post">
-        <div class="row">
-          <div class="col-25">
-            <b><label for="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name:</label></b>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Enter your name"
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-25">
-            <b><label for="firm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Company/Firm:</label></b>
-            <input
-              type="text"
-              id="firm"
-              name="firm"
-              placeholder="Enter your company/firm"
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-25">
-            <b><label for="contact">Contact Number:</label></b>
-            <input
-              type="tel"
-              id="contact"
-              name="contact"
-              placeholder="Enter your contact number"
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-25">
-            <b><label for="idnumber">Identity Number:</label></b>
-            <input
-              type="text"
-              id="idnumber"
-              name="idnumber"
-              placeholder="Enter your identity number"
-            />
-          </div>
-        </div>
-        <div class="row">
-          <b><button type="submit">Submit</button></b>
-        </div>
-      </form>
-    </div>
-  </body>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+/* Set a style for the photo button */
+.photobtn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.photobtn:hover {
+  opacity: 1;
+}
+
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<form action="/action_page.php">
+  <div class="container">
+    <h1>First Time Registration of Dispatch</h1>
+    <p>Please fill in this form if this is your first time.</p>
+    <hr>
+
+    <label for="name"><b>Name of Dispatch</b></label>
+    <input type="text" placeholder="Name of Dispatch" name="name" id="name" required>
+
+    <label for="org"><b>Organization Name</b></label>
+    <input type="text" placeholder="Organization Name" name="org" id="org" required>
+
+    <label for="nric"><b>NRIC Number:</b></label>
+    <input type="text" placeholder="NRIC Number" name="nric" id="nric" required>
+
+    <label for="tp"><b>Telephone Number</b></label>
+    <input type="text" placeholder="Telephone Number: " name="tp" id="tp" required>
+  
+    <hr>
+    <button type="submit" class="photobtn">PROFILE PICTURE</button>
+    <button type="submit" class="registerbtn">REGISTER</button>
+  </div>
+  
+  <div class="container signin">
+    <p>Not your first time?<a href="#">SIGN IN</a>.</p>
+  </div>
+</form>
+
+</body>
 </html>
