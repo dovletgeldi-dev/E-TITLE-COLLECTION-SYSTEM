@@ -23,8 +23,45 @@
     <title>Search Driver</title>
   </head>
   <style>
-  
+  body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: grey;
+      }
 
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Add padding to containers */
+      .container {
+        padding: 16px;
+        background-color: white;
+      }
+
+      /* Full-width input fields */
+      input[type="search"] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+
+      input[type="search"]:focus:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      .search-submit-button {
+        background-color: #04aa6d;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
     </style>
   <body>
     <!-- <div class="container">
@@ -47,12 +84,11 @@
 
           <form role="search" method="get" class="search-form form" action="">
             <label>
-              
-                <span class="screen-reader-text">Search for...</span>
-                <input type="search" class="search-field" placeholder="Enter Rider's Name" value="" name="s" title="" />
+               <!-- Search ID instead of NAME, as requested by employer. -->
+                <input type="search" class="search-field" placeholder="ENTER RIDER'S ID" value="" name="s" title="" />
             </label>
             
-            <button type="submit" class="search-submit button" value="&#xf002">Submit</button></b>
+            <button type="submit" class="search-submit-button" value="&#xf002">SUBMIT</button></b>
         </div>
       </div>
     </main>
