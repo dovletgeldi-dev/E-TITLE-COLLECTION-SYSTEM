@@ -7,14 +7,78 @@
 
     <link rel="stylesheet" href="/E-TITLE-COLLECTION-SYSTEM/styles/menu.css" />
     <title>Menu</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: grey;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Add padding to containers */
+      .container {
+        padding: 16px;
+        background-color: white;
+      }
+      /* Overwrite default styles of hr */
+      hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+      }
+
+      .Database {
+        background-color: dodgerblue;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 10%;
+        opacity: 0.9;
+      }
+      .Search {
+        background-color: green;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        position: relative;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
+      .start-camera {
+        background-color: dodgerblue;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 10%;
+        opacity: 0.9;
+      }
+
+      .click-photo {
+        background-color: dodgerblue;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 10%;
+        opacity: 0.9;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <h1>Courier E-Tracking System</h1>
       <div class="menu">
-        <button id="start-camera">Start Camera</button>
+        <button class="start-camera">Start Camera</button>
         <video id="video" width="500" height="500" autoplay></video>
-        <button id="click-photo">Click Photo</button>
+        <button class="click-photo">Click Photo</button>
         <canvas id="canvas" width="500" height="400"></canvas>
 
         <button onclick="link" class="Database">Database</button>
