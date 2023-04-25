@@ -38,6 +38,14 @@
         width: 10%;
         opacity: 0.9;
       }
+
+      .Database:hover {background-color: darkblue}
+
+      .Database:active {
+        box-shadow: 0 5px darkblue;
+        transform: translateY(4px);
+      }
+
       .Search {
         background-color: green;
         color: white;
@@ -48,6 +56,13 @@
         cursor: pointer;
         width: 100%;
         opacity: 0.9;
+      }
+
+      .Search:hover {background-color: darkgreen}
+
+      .Search:active {
+        box-shadow: 0 5px darkgreen;
+        transform: translateY(4px);
       }
       .start-camera {
         background-color: dodgerblue;
@@ -60,6 +75,13 @@
         opacity: 0.9;
       }
 
+      .start-camera:hover {background-color: darkblue}
+
+      .start-camera:active {
+        box-shadow: 0 5px darkblue;
+        transform: translateY(4px);
+      }
+
       .click-photo {
         background-color: dodgerblue;
         color: white;
@@ -70,19 +92,27 @@
         width: 10%;
         opacity: 0.9;
       }
+
+      .click-photo:hover {background-color: darkblue}
+
+      .click-photo:active {
+        box-shadow: 0 5px darkblue;
+        transform: translateY(4px);
+      }
+
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>Courier E-Tracking System</h1>
+      <b><h1>COURIER E-TRACKING MENU</h1></b>
       <div class="menu">
-        <button class="start-camera">Start Camera</button>
+        <button class="start-camera">CAMERA</button>
         <video id="video" width="500" height="500" autoplay></video>
-        <button class="click-photo">Click Photo</button>
+        <button class="click-photo">PHOTO</button>
         <canvas id="canvas" width="500" height="400"></canvas>
 
-        <button onclick="link" class="Database">Database</button>
-        <button onclick="link" class="Search">Search</button>
+        <button onclick="link" class="Database">DATABASE</button>
+        <button onclick="link" class="Search">SEARCH</button>
       </div>
     </div>
 
