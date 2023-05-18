@@ -20,6 +20,23 @@ SET time_zone = "+00:00";
 --
 -- Database: `etcs_database`
 --
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `Username` varchar(50) NOT NULL,
+  `Password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`Username`, `Password`) VALUES
+('admin', 'admin');
 
 -- --------------------------------------------------------
 
