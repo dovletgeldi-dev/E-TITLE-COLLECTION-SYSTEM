@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2023 at 10:46 AM
+-- Generation Time: May 19, 2023 at 04:02 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -20,6 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `etcs_database`
 --
+
 -- --------------------------------------------------------
 
 --
@@ -29,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `Username` varchar(50) NOT NULL,
   `Password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
@@ -50,6 +51,13 @@ CREATE TABLE `dispatch` (
   `dispatch_phone_no` varchar(11) NOT NULL,
   `organization_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `dispatch`
+--
+
+INSERT INTO `dispatch` (`dispatch_nric`, `dispatch_name`, `dispatch_phone_no`, `organization_name`) VALUES
+('010101100101', 'Addam', '0111111111', 'Addam Company');
 
 -- --------------------------------------------------------
 
@@ -74,17 +82,6 @@ INSERT INTO `members` (`member_id`, `username`, `password`, `datetime_join`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `report`
---
-
-CREATE TABLE `report` (
-  `full_summary` varchar(100) NOT NULL,
-  `dispatch_ic` varchar(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `titles`
 --
 
@@ -95,6 +92,13 @@ CREATE TABLE `titles` (
   `date_collected` datetime DEFAULT current_timestamp(),
   `dispatch_ic` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `titles`
+--
+
+INSERT INTO `titles` (`title_id`, `title_name`, `document_name`, `date_collected`, `dispatch_ic`) VALUES
+(1000000000, 'INTI Property Title', 'Block A Document', '2023-05-19 21:42:28', '010101100101');
 
 -- --------------------------------------------------------
 
@@ -107,6 +111,13 @@ CREATE TABLE `visit_purpose` (
   `remarks` varchar(100) NOT NULL,
   `dispatch_ic` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `visit_purpose`
+--
+
+INSERT INTO `visit_purpose` (`developer_name`, `remarks`, `dispatch_ic`) VALUES
+('INTI Corporation Berhad', 'Purpose of visit: Collect E-Title.', '010101100101');
 
 --
 -- Indexes for dumped tables
@@ -123,12 +134,6 @@ ALTER TABLE `dispatch`
 --
 ALTER TABLE `members`
   ADD PRIMARY KEY (`member_id`);
-
---
--- Indexes for table `report`
---
-ALTER TABLE `report`
-  ADD KEY `dispatch3` (`dispatch_ic`);
 
 --
 -- Indexes for table `titles`
@@ -157,17 +162,11 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT for table `titles`
 --
 ALTER TABLE `titles`
-  MODIFY `title_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `title_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000000001;
 
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `report`
---
-ALTER TABLE `report`
-  ADD CONSTRAINT `dispatch3` FOREIGN KEY (`dispatch_ic`) REFERENCES `dispatch` (`dispatch_nric`);
 
 --
 -- Constraints for table `titles`
