@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/E-TITLE-COLLECTION-SYSTEM/styles/menu.css" />
+    <title>Menu</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: grey;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Add padding to containers */
+      .container {
+        padding: 16px;
+        background-color: white;
+      }
+      /* Overwrite default styles of hr */
+      hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+      }
+
+      .Database {
+        background-color: dodgerblue;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 10%;
+        opacity: 0.9;
+      }
+
+      .Database:hover {background-color: darkblue}
+
+      .Database:active {
+        box-shadow: 0 5px darkblue;
+        transform: translateY(4px);
+      }
+
+      .Search {
+        background-color: green;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        position: relative;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
+
+      .Search:hover {background-color: darkgreen}
+
+      .Search:active {
+        box-shadow: 0 5px darkgreen;
+        transform: translateY(4px);
+      }
+      .start-camera {
+        background-color: dodgerblue;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 10%;
+        opacity: 0.9;
+      }
+
+      .start-camera:hover {background-color: darkblue}
+
+      .start-camera:active {
+        box-shadow: 0 5px darkblue;
+        transform: translateY(4px);
+      }
+
+      .click-photo {
+        background-color: dodgerblue;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 10%;
+        opacity: 0.9;
+      }
+
+      .click-photo:hover {background-color: darkblue}
+
+      .click-photo:active {
+        box-shadow: 0 5px darkblue;
+        transform: translateY(4px);
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <b><h1>COURIER E-TRACKING MENU</h1></b>
+      <div class="menu">
+        <button class="start-camera">CAMERA</button>
+        <video id="video" width="500" height="500" autoplay></video>
+        <button class="click-photo">PHOTO</button>
+        <canvas id="canvas" width="500" height="400"></canvas>
+
+        <button onclick="link" class="Database">DATABASE</button>
+        <button onclick="link" class="Search">SEARCH</button>
+      </div>
+    </div>
+
+    <script src="/E-TITLE-COLLECTION-SYSTEM/scripts/menu.js"></script>
+  </body>
+</html>
