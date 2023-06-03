@@ -130,6 +130,11 @@ a:hover {
 
 /* Set a style for the submit button */
 .registerBtn {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content; */
+
   background-color: #2563eb;
   color: white;
   font-weight: 500;
@@ -157,4 +162,56 @@ a:hover {
 
 .signInBtn:is(:hover, :focus) {
   background-color: #60a5fa;
+}
+
+/* Picture */
+
+.picture_container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  margin: 3rem 0;
+  gap: 2rem;
+}
+
+.picture_content {
+  display: grid;
+  gap: 2rem;
+}
+
+.snapshotBtn {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 500;
+
+  letter-spacing: 2px;
+  padding: 1rem 2rem;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: max-content;
+}
+
+.snapshotBtn:is(:hover, :focus) {
+  background-color: #60a5fa;
+}
+
+.submitBtn {
+  background-color: #16a34a;
+  color: white;
+  font-weight: 500;
+
+  letter-spacing: 2px;
+  padding: 1rem 2rem;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: max-content;
+}
+
+.submitBtn:is(:hover, :focus) {
+  background-color: #22c55e;
 }

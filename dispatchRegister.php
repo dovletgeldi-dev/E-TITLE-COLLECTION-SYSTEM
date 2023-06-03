@@ -10,6 +10,8 @@
   <!-- CSS -->
   <link rel="stylesheet" href="styles/dispatchRegister.css">
 
+
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,15 +21,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js" integrity="sha512-dQIiHSl2hr3NWKKLycPndtpbh5iaHLo6MwrXm7F0FM5e+kL2U16oE9uIwPHUl6fQBeCthiEuV/rzP3MiAB8Vfw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
+
+
 </head>
 
 <body>
   <?php
+
   if (isset($_POST["submit"])) {
     $dispatch_nric = $_POST["dispatch_nric"];
     $dispatch_name = $_POST["dispatch_name"];
     $organization_name = $_POST["organization_name"];
     $dispatch_phone_no = $_POST["dispatch_phone_no"];
+
 
     $errors = array();
 
@@ -50,7 +56,7 @@
         echo "<div>$error</div>";
       }
     } else {
-      $sql = "INSERT INTO dispatch (dispatch_nric, dispatch_name, dispatch_phone_no, organization_name) VALUES (?, ?, ?, ? )";
+      $sql = "INSERT INTO dispatch (dispatch_nric, dispatch_name, dispatch_phone_no, organization_name) VALUES (?, ?, ?, ?)";
       $stmt = mysqli_stmt_init($conn);
       $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
       if ($prepareStmt) {
@@ -65,6 +71,10 @@
     }
   }
   ?>
+
+
+
+
   <div class="container">
     <header>
       <img src="images/logo.png" alt="Logo" width="180px" height="180px">
@@ -97,28 +107,31 @@
       <hr />
 
 
-      <!-- <h5>1. Take a picture first</h5>
+      <h3 align="center">* Take a snapshot first and then click Save Picture & Register</h3>
       <div class="picture_container">
-        <form action="/dispatch-login/savePicture.php" method="post">
-          <div>
-            <div id="my_camera"></div>
-            <br>
-            <input type="button" value="Take Snapshot" onclick="takeSnapshot()">
-            <input type="hidden" name="image" class="image_tag">
-          </div>
-          <div>
-            <div class="results">Captured Image Will Appear Here</div>
-          </div>
-          <div>
-            <div>
-              <br>
-              <button>Submit</button>
-            </div>
-          </div> -->
+        <div class="picture_content">
+          <label>Capture live photo</label>
+          <div id="my_camera"></div>
+          <input type="hidden" name="captured_image_data" id="captured_image_data">
 
+          <button type="button" class="snapshotBtn" onclick="take_snapshot();">Take Snapshot</button>
+        </div>
+        <div class="picture_content">
+          <label>Result</label>
+          <div id="results">
+            <img src="https://placehold.co/400x300?text=Captured image will be shown here" />
+          </div>
+          <button type="button" class="submitBtn" onclick="this.disabled=true; this.value='Sending…'; saveSnap();">Save Picture & Register</button>
+        </div>
+      </div>
+      <!-- end container -->
+
+      <hr />
 
       <button type="submit" class="registerBtn" value="Register" name="submit">REGISTER</button>
     </form>
+
+
 
 
     <div class="registerSignIn">
@@ -129,19 +142,13 @@
   </div>
 
 
+  <!-- Webcam -->
+
+  <!-- <script type="text/javascript" src="assets/datatables.min.js"></script> -->
+  <script type="text/javascript" src="assets/webcam.min.js"></script>
+  <script src="scripts/dispatchRegister.js"></script>
 
 
-
-  <!-- <script>
-    Webcam.set({
-      width: 400,
-      height: 300,
-      image_format: 'jpeg',
-      jpeg_quality: 90
-    })
-
-    Webcam.attach("#my_camera")
-  </script> -->
 </body>
 
 </html>
