@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2023 at 04:02 PM
+-- Generation Time: Jun 06, 2023 at 08:09 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -24,28 +24,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `Username` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`Username`, `Password`) VALUES
-('admin', 'admin');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `dispatch`
 --
 
 CREATE TABLE `dispatch` (
+  `id` int(11) NOT NULL,
   `dispatch_nric` varchar(12) NOT NULL,
   `dispatch_name` varchar(50) NOT NULL,
   `dispatch_phone_no` varchar(11) NOT NULL,
@@ -56,8 +39,12 @@ CREATE TABLE `dispatch` (
 -- Dumping data for table `dispatch`
 --
 
-INSERT INTO `dispatch` (`dispatch_nric`, `dispatch_name`, `dispatch_phone_no`, `organization_name`) VALUES
-('010101100101', 'Addam', '0111111111', 'Addam Company');
+INSERT INTO `dispatch` (`id`, `dispatch_nric`, `dispatch_name`, `dispatch_phone_no`, `organization_name`) VALUES
+(1, '010916231213', 'Steph Curry', '60172321321', 'Golden State Warriors'),
+(2, '990416213312', 'Michael Schumacher', '60173122132', 'Ferrari'),
+(3, '851130123213', 'Lionel Messi', '60173212313', 'Barcelona FC'),
+(4, '610109231231', 'Alex Simple', '60132132133', 'Natus Vincere'),
+(8, '010101100101', 'Addam', '0102592808', 'Addam Organization ');
 
 -- --------------------------------------------------------
 
@@ -82,6 +69,30 @@ INSERT INTO `members` (`member_id`, `username`, `password`, `datetime_join`) VAL
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_image`
+--
+
+CREATE TABLE `tb_image` (
+  `id` int(11) NOT NULL,
+  `date` varchar(50) NOT NULL,
+  `image` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_image`
+--
+
+INSERT INTO `tb_image` (`id`, `date`, `image`) VALUES
+(1, '2023/06/03 & 01:43:28pm', '2023.06.03 - 01.43.28pm .jpeg'),
+(2, '2023/06/03 & 01:44:51pm', '2023.06.03 - 01.44.51pm .jpeg'),
+(3, '2023/06/03 & 01:45:38pm', '2023.06.03 - 01.45.38pm .jpeg'),
+(4, '2023/06/03 & 01:46:59pm', '2023.06.03 - 01.46.59pm .jpeg'),
+(8, '2023/06/06 & 07:36:29am', '2023.06.06 - 07.36.29am .jpeg'),
+(9, '2023/06/06 & 07:44:22am', '2023.06.06 - 07.44.22am .jpeg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `titles`
 --
 
@@ -98,7 +109,9 @@ CREATE TABLE `titles` (
 --
 
 INSERT INTO `titles` (`title_id`, `title_name`, `document_name`, `date_collected`, `dispatch_ic`) VALUES
-(1000000000, 'INTI Property Title', 'Block A Document', '2023-05-19 21:42:28', '010101100101');
+(9904, 'Lum Title', 'Lum Document', '2023-06-06 13:45:18', '990416213312'),
+(1000000000, 'INTI Property Title', 'Block A Document', '2023-05-19 21:42:28', '010101100101'),
+(1000000002, 'SP Setia Title ', 'SP Setia Document 1', '2023-06-06 14:07:20', '010101100101');
 
 -- --------------------------------------------------------
 
@@ -107,6 +120,7 @@ INSERT INTO `titles` (`title_id`, `title_name`, `document_name`, `date_collected
 --
 
 CREATE TABLE `visit_purpose` (
+  `id` int(11) NOT NULL,
   `developer_name` varchar(50) NOT NULL,
   `remarks` varchar(100) NOT NULL,
   `dispatch_ic` varchar(12) NOT NULL
@@ -116,8 +130,10 @@ CREATE TABLE `visit_purpose` (
 -- Dumping data for table `visit_purpose`
 --
 
-INSERT INTO `visit_purpose` (`developer_name`, `remarks`, `dispatch_ic`) VALUES
-('INTI Corporation Berhad', 'Purpose of visit: Collect E-Title.', '010101100101');
+INSERT INTO `visit_purpose` (`id`, `developer_name`, `remarks`, `dispatch_ic`) VALUES
+(1, 'INTI Corporation Berhad', 'Purpose of visit: Collect E-Title.', '010101100101'),
+(10, 'Lum Developer', 'None', '990416213312'),
+(11, 'SP Setia', 'Collection done.', '010101100101');
 
 --
 -- Indexes for dumped tables
@@ -127,13 +143,19 @@ INSERT INTO `visit_purpose` (`developer_name`, `remarks`, `dispatch_ic`) VALUES
 -- Indexes for table `dispatch`
 --
 ALTER TABLE `dispatch`
-  ADD PRIMARY KEY (`dispatch_nric`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `members`
 --
 ALTER TABLE `members`
   ADD PRIMARY KEY (`member_id`);
+
+--
+-- Indexes for table `tb_image`
+--
+ALTER TABLE `tb_image`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `titles`
@@ -146,11 +168,18 @@ ALTER TABLE `titles`
 -- Indexes for table `visit_purpose`
 --
 ALTER TABLE `visit_purpose`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `dispatch` (`dispatch_ic`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `dispatch`
+--
+ALTER TABLE `dispatch`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `members`
@@ -159,26 +188,22 @@ ALTER TABLE `members`
   MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
+-- AUTO_INCREMENT for table `tb_image`
+--
+ALTER TABLE `tb_image`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `titles`
 --
 ALTER TABLE `titles`
-  MODIFY `title_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000000001;
+  MODIFY `title_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000000009;
 
 --
--- Constraints for dumped tables
---
-
---
--- Constraints for table `titles`
---
-ALTER TABLE `titles`
-  ADD CONSTRAINT `dispatch2` FOREIGN KEY (`dispatch_ic`) REFERENCES `dispatch` (`dispatch_nric`);
-
---
--- Constraints for table `visit_purpose`
+-- AUTO_INCREMENT for table `visit_purpose`
 --
 ALTER TABLE `visit_purpose`
-  ADD CONSTRAINT `dispatch` FOREIGN KEY (`dispatch_ic`) REFERENCES `dispatch` (`dispatch_nric`);
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
