@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2023 at 08:09 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Jun 07, 2023 at 07:45 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `dispatch` (
   `dispatch_name` varchar(50) NOT NULL,
   `dispatch_phone_no` varchar(11) NOT NULL,
   `organization_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `dispatch`
@@ -43,8 +43,7 @@ INSERT INTO `dispatch` (`id`, `dispatch_nric`, `dispatch_name`, `dispatch_phone_
 (1, '010916231213', 'Steph Curry', '60172321321', 'Golden State Warriors'),
 (2, '990416213312', 'Michael Schumacher', '60173122132', 'Ferrari'),
 (3, '851130123213', 'Lionel Messi', '60173212313', 'Barcelona FC'),
-(4, '610109231231', 'Alex Simple', '60132132133', 'Natus Vincere'),
-(8, '010101100101', 'Addam', '0102592808', 'Addam Organization ');
+(4, '610109231231', 'Alex Simple', '60132132133', 'Natus Vincere');
 
 -- --------------------------------------------------------
 
@@ -57,7 +56,7 @@ CREATE TABLE `members` (
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `datetime_join` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `members`
@@ -76,7 +75,7 @@ CREATE TABLE `tb_image` (
   `id` int(11) NOT NULL,
   `date` varchar(50) NOT NULL,
   `image` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_image`
@@ -86,9 +85,7 @@ INSERT INTO `tb_image` (`id`, `date`, `image`) VALUES
 (1, '2023/06/03 & 01:43:28pm', '2023.06.03 - 01.43.28pm .jpeg'),
 (2, '2023/06/03 & 01:44:51pm', '2023.06.03 - 01.44.51pm .jpeg'),
 (3, '2023/06/03 & 01:45:38pm', '2023.06.03 - 01.45.38pm .jpeg'),
-(4, '2023/06/03 & 01:46:59pm', '2023.06.03 - 01.46.59pm .jpeg'),
-(8, '2023/06/06 & 07:36:29am', '2023.06.06 - 07.36.29am .jpeg'),
-(9, '2023/06/06 & 07:44:22am', '2023.06.06 - 07.44.22am .jpeg');
+(4, '2023/06/03 & 01:46:59pm', '2023.06.03 - 01.46.59pm .jpeg');
 
 -- --------------------------------------------------------
 
@@ -102,7 +99,7 @@ CREATE TABLE `titles` (
   `document_name` varchar(50) NOT NULL,
   `date_collected` datetime DEFAULT current_timestamp(),
   `dispatch_ic` varchar(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `titles`
@@ -124,7 +121,7 @@ CREATE TABLE `visit_purpose` (
   `developer_name` varchar(50) NOT NULL,
   `remarks` varchar(100) NOT NULL,
   `dispatch_ic` varchar(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `visit_purpose`
@@ -179,7 +176,7 @@ ALTER TABLE `visit_purpose`
 -- AUTO_INCREMENT for table `dispatch`
 --
 ALTER TABLE `dispatch`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `members`
@@ -191,7 +188,7 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT for table `tb_image`
 --
 ALTER TABLE `tb_image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `titles`
