@@ -57,19 +57,27 @@
         }
 
         </style>
-        </head>
-
-<h2>Purpose of visit.</h2>
+        </head>		
+	
+<h2>Purpose of Visit.</h2>
 <p>Please state the purpose of your visit.</p>
 
-<form action="/action_page.php">
+<form action="purpose_function.php" method ="post">
+
+  <input type="text" id="dispatchic" name="dispatchic" placeholder="Dispatch NRIC:" minlength="12" maxlength="12" required><br>
+  
   <input type="checkbox" id="collection" name="c" value="Collection">
   <label for="collection"> (A)	Collection of Title</label><br>
-  <input type="text" id="collection" name="collection" value="Name of Developer:"><br>
+  
+  <input type="text" id="nameofdeveloper" name="nameofdeveloper" placeholder="Name of Developer:" minlength="1" maxlength="50" required><br>
+  <input type="text" id="titleid" name="titleid" placeholder="Title's ID:" minlength="1" maxlength="10" required><br>
+  <input type="text" id="titlename" name="titlename" placeholder="Title's Name:" minlength="1" maxlength="50" required><br>
+  <input type="text" id="documentname" name="documentname" placeholder="Document's Name:" minlength="1" maxlength="50" required><br>
+   
   <input type="checkbox" id="discussion" name="discussion" value="Discussion">
   <label for="discussion"> (B)	General Discussion</label><br>
-  <input type="text" id="discussion" name="discussion" value="Remark:"><br>
-  <input type="submit" class="submit" value="Submit">
+  <input type="text" id="remarks" name="remarks" placeholder="Remark:" minlength="1" maxlength="100" required><br>
+  <input type="submit" class="submit" name="submit" value="Submit">
 </form> 
 </body>
 </html>

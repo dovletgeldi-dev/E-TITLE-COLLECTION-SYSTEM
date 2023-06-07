@@ -15,14 +15,14 @@
 
 <body>
 
-  <form id="sign_data" method="post" action="report.php">
+  <form id="sign_data" method="post" action="report_page_function.php">
     <header>
       <h2 id = "first_H" ><strong>Summary Report</strong></h2>
     </header>
     <fieldset>
       <legend id = "PDs" class = "legend">Search Rider's NRIC</legend>
         <p id="searchFunction" class="questions">
-          <label for = "search" ><input id = "search" class = "answer" type="text" name="search" required = "required" pattern = "^[0-9]{0,20}$" placeholder="Enter NRIC"/><input id="searchButton" type="submit" value="Search" /></label><br><br><br><br>
+          <label for = "search" ><input id = "search" class = "answer" type="text" name="search" required = "required" pattern = "^[0-9]{0,20}$" minlength="12" maxlength="12" placeholder="Enter NRIC"/><input id="searchButton" type="submit" value="Search" /></label><br><br><br><br>
         </p>
 
         <?php
@@ -32,9 +32,8 @@
           {
             $searchedID = $_POST["search"];
 
-            require_once('settings.php');
-            $conn = @mysqli_connect($host,$user,$pwd,$sql_db);
-
+            require_once('database.php');
+            
             if (!$conn) {
             echo "<p>Database connection failure $host, $user, $pwd, $sql_db</p>";  
             } 
@@ -60,11 +59,21 @@
                   echo"<table border = \"1\">\n";
                   echo"<tr>\n"
                   ."<th scope = \"col\">Dispatch's NRIC</th>\n "
-                  ."<th scope = \"col\">Dispatch;s Name</th>\n "
+                  ."<th scope = \"col\">Dispatch's Name</th>\n "
                   ."<th scope = \"col\">Dispatch's Phone No.</th>\n "
                   ."<th scope = \"col\">Organization's Name</th>\n "
                   ."</tr>\n";
 
+
+				$queryJoin = "SELECT tb_image.image FROM tb_image, dispatch WHERE dispatch.id=tb_image.id AND dispatch.dispatch_nric='$searchedID'";
+				$result2 = @mysqli_query($conn,$queryJoin); 
+				$row = mysqli_fetch_array($result2);
+				$imagepath = $row['image']; 
+				if($result2) {
+				echo"<img src='img/$imagepath' width='300' height='200'>";	
+					
+				}
+				
                   while ($row = mysqli_fetch_assoc($result)) 
                   {
                     echo"<tr>\n ";
@@ -72,6 +81,9 @@
                     echo"<td>",$row["dispatch_name"],"</td>\n ";
                     echo"<td>",$row["dispatch_phone_no"],"</td>\n ";
                     echo"<td>",$row["organization_name"],"</td>\n ";
+					
+					
+					
                     echo"</tr>\n ";
                   }
                   echo"</table>\n";               

@@ -8,3 +8,5 @@ $conn = mysqli_connect($hostName, $dbUser, $dbNric, $dbName);
 if (!$conn) {
   die("Something went wrong");
 }
+
+

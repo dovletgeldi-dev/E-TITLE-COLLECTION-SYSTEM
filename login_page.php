@@ -51,7 +51,7 @@
       }
 
       img.avatar {
-        width: 30%;
+        width: 22%;
         border-radius: 30%;
       }
 
@@ -74,16 +74,34 @@
       }
     </style>
   </head>
+  
+  <?php
+
+     session_start();
+     
+    // Detect input
+    if(isset($_SESSION["MessageThatComeFromLoginProcessPage"]))
+    {
+      $message = $_SESSION["MessageThatComeFromLoginProcessPage"];
+      echo '<script>alert("'.$message.'")</script>';
+      unset($_SESSION["MessageThatComeFromLoginProcessPage"]);
+    }
+    
+?>
+
   <body>
+  <form id="sign_data" method="post" action="login_function.php">
     <h2>LOGIN FORM </h2>
         <div class="imgcontainer">
           <img
-            src="https://w7.pngwing.com/pngs/129/292/png-transparent-female-avatar-girl-face-woman-user-flat-classy-users-icon.png"
+            src="images/logo.png"
             alt="Avatar"
             class="avatar"
           />
         </div>
-
+		
+		
+		
         <div class="container">
           <label for="username"><b>USERNAME</b></label>
           <input
@@ -91,7 +109,7 @@
             type="text"
             placeholder="ENTER USERNAME:"
             name="username"
-            required
+			required
           />
 
           <label for="password"><b>PASSWORD</b></label>
@@ -108,6 +126,7 @@
 
         <div class="container" style="background-color: #f1f1f1"></div>
       </form>
+			
     </div>
   </body>
 </html>

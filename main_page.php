@@ -9,6 +9,27 @@
     <link rel="stylesheet" href="/styles/main.css" />
     <script defer src="/E-TITLE-COLLECTION-SYSTEM/scripts/main.js"></script>
   </head>
+  
+  <?php
+  
+	session_start();
+   
+    if(isset($_SESSION["MessageThatComeFromLoginProcessPage"]))
+    {
+      $message = $_SESSION["MessageThatComeFromLoginProcessPage"];
+      echo '<script>alert("'.$message.'")</script>';
+      unset($_SESSION["MessageThatComeFromLoginProcessPage"]);
+    }
+	
+	if(isset($_SESSION["MessageThatComeFromPurposePage"]))
+    {
+      $message = $_SESSION["MessageThatComeFromPurposePage"];
+      echo '<script>alert("'.$message.'")</script>';
+      unset($_SESSION["MessageThatComeFromPurposePage"]);
+    }
+	
+	?>
+	
   <body>
     <main>
       <header>
