@@ -1,3 +1,7 @@
+:root {
+  --ff-accent: "Inter", sans-serif;
+}
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -10,7 +14,7 @@
   2. Remove default margin
 */
 * {
-  margin: 0;
+  margin: 0 auto;
 }
 /*
   3. Allow percentage-based heights in the application
@@ -37,8 +41,7 @@ video,
 canvas,
 svg {
   display: block;
-  min-width: 100%;
-  min-height: 100%;
+  max-width: 100%;
 }
 /*
   7. Remove built-in form typography styles
@@ -48,6 +51,7 @@ button,
 textarea,
 select {
   font: inherit;
+  width: 100%;
 }
 /*
   8. Avoid text overflows
@@ -65,96 +69,46 @@ h6 {
 /* General Styling */
 
 body {
-  margin-inline: 1.5rem;
+  font-family: var(--ff-accent);
+  max-width: 1440px;
+}
+
+.container {
+  padding: 1rem 2rem;
   max-width: 1200px;
-  margin: auto;
-  padding-top: 1rem;
-  padding-inline: 2rem;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+.header {
+  margin-bottom: 3rem;
 }
 
-.navbar {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-transform: uppercase;
-  font-size: 1.25rem;
-}
-
-.navbar-links ul {
-  text-decoration: none;
-  display: flex;
+.links {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   gap: 2rem;
 }
 
-.navbar-links li {
-  list-style: none;
-}
-
-.navbar-links a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Hover */
-
-.navbar-links li:is(:hover, :active) {
-  color: goldenrod;
-}
-
-/* Hamburger */
-
-.toggle-button {
-  position: absolute;
-  top: 2rem;
-  right: 1rem;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
-}
-
-.toggle-button .bar {
-  height: 3px;
+a {
   width: 100%;
-  background-color: black;
-  border-radius: 10px;
 }
 
-@media (max-width: 600px) {
-  .toggle-button {
-    display: flex;
-  }
+.links button {
+  background-color: #404040;
+  color: #f59e0b;
 
-  .navbar-links {
-    display: none;
-    width: 100%;
-    background-color: whitesmoke;
-  }
+  font-weight: 700;
+  letter-spacing: 2px;
 
-  .navbar-links:last-child {
-    padding-bottom: 1.5rem;
-  }
+  padding: 2rem 0;
 
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  border: 0;
+  border-radius: 10px;
 
-  .navbar-links ul {
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    padding-left: 1rem;
-  }
+  cursor: pointer;
+}
 
-  .navbar-links.active {
-    display: flex;
-  }
+.links button:hover {
+  background-color: #f59e0b;
+  color: #404040;
 }

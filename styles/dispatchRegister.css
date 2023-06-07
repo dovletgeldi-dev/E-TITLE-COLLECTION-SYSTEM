@@ -76,7 +76,6 @@ body {
 .container {
   padding: 2rem;
   max-width: 1200px;
-  background-color: white;
 }
 
 h1 {
@@ -85,7 +84,7 @@ h1 {
 
 .registerTitle {
   text-align: center;
-  margin: 2rem 0;
+  margin: 1rem 0 2rem 0;
 }
 
 .registerSignIn {
@@ -106,7 +105,7 @@ input {
 
 input:focus {
   background-color: white;
-  border: #93c5fd 2px solid;
+  border: #f59e0b 2px solid;
   outline: none;
 }
 
@@ -120,24 +119,22 @@ a {
   text-decoration: none;
   color: inherit;
   font-weight: bold;
-  border-bottom: 3px solid #2563eb;
+  border-bottom: 3px solid #f59e0b;
 }
 
 a:hover {
   color: #737373;
-  border-bottom: 3px solid #93c5fd;
+  border-bottom: 3px solid #404040;
 }
 
 /* Set a style for the submit button */
 .registerBtn {
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  width: max-content; */
+  width: 220px;
 
-  background-color: #2563eb;
-  color: white;
-  font-weight: 500;
+  background-color: #404040;
+  color: #f59e0b;
+
+  font-weight: 700;
   letter-spacing: 2px;
   padding: 1rem 3rem;
   margin: 1rem 0;
@@ -147,21 +144,8 @@ a:hover {
 }
 
 .registerBtn:is(:hover, :focus) {
-  background-color: #60a5fa;
-}
-
-.signInBtn {
-  background-color: #2563eb;
-  color: white;
-  padding: 1rem 3rem;
-  margin: 1rem 0;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.signInBtn:is(:hover, :focus) {
-  background-color: #60a5fa;
+  background-color: #f59e0b;
+  color: #404040;
 }
 
 /* Picture */
@@ -181,9 +165,9 @@ a:hover {
 }
 
 .snapshotBtn {
-  background-color: #2563eb;
-  color: white;
-  font-weight: 500;
+  background-color: #f59e0b;
+  color: black;
+  font-weight: 700;
 
   letter-spacing: 2px;
   padding: 1rem 2rem;
@@ -195,13 +179,13 @@ a:hover {
 }
 
 .snapshotBtn:is(:hover, :focus) {
-  background-color: #60a5fa;
+  background-color: #ffc869;
 }
 
 .submitBtn {
-  background-color: #16a34a;
-  color: white;
-  font-weight: 500;
+  background-color: #f59e0b;
+  color: black;
+  font-weight: 700;
 
   letter-spacing: 2px;
   padding: 1rem 2rem;
@@ -213,5 +197,5 @@ a:hover {
 }
 
 .submitBtn:is(:hover, :focus) {
-  background-color: #22c55e;
+  background-color: #ffc869;
 }

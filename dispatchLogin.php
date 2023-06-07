@@ -28,14 +28,14 @@
     </header>
 
 
+    <div class="loginTitle">
+      <h1>Dispatch login page</h1>
+      <p>Please login to continue</p>
+    </div>
 
+    <hr />
 
     <form action="dispatchLogin.php" method="post">
-      <div class="loginTitle">
-        <h1>Dispatch login page</h1>
-        <p>Please login to continue.</p>
-      </div>
-      <hr />
 
       <label for="dispatch_nric"><b>NRIC Number:</b></label>
       <input type="text" placeholder="YYMMDDPB###G" name="dispatch_nric" id="dispatch_nric" minlength="12" maxlength="12" required />

@@ -4,129 +4,79 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login Page</title>
 
-    <!-- <link
-      rel="stylesheet"
-      href="/E-TITLE-COLLECTION-SYSTEM/styles/loginPage.css"
-    /> -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/login.css">
+
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+
+
+    <!-- JS -->
     <script src="/E-TITLE-COLLECTION-SYSTEM/scripts/loginPage.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-
-      /* Full-width input fields */
-      input[type="text"],
-      input[type="password"] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-      }
-
-      /* Set a style for all buttons */
-      button {
-        background-color: #04aa6d;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-      }
-
-      button:hover {
-        opacity: 0.8;
-      }
-
-      /* Center the image and position the close button */
-      .imgcontainer {
-        text-align: center;
-        margin: 5px 5px;
-        position: relative;
-      }
-
-      img.avatar {
-        width: 22%;
-        border-radius: 30%;
-      }
-
-      .container {
-        padding: 10px;
-      }
-
-      span.psw {
-        float: right;
-        padding-top: 16px;
-      }
-
-    
-      /* Change styles for span and cancel button on extra small screens */
-      @media screen and (max-width: 300px) {
-        span.psw {
-          display: block;
-          float: none;
-        }
-      }
-    </style>
   </head>
   
   <?php
+  session_start();
 
-     session_start();
-     
-    // Detect input
-    if(isset($_SESSION["MessageThatComeFromLoginProcessPage"]))
-    {
-      $message = $_SESSION["MessageThatComeFromLoginProcessPage"];
-      echo '<script>alert("'.$message.'")</script>';
-      unset($_SESSION["MessageThatComeFromLoginProcessPage"]);
-    }
+  // Detect input
+  if (isset($_SESSION["MessageThatComeFromLoginProcessPage"])) {
+    $message = $_SESSION["MessageThatComeFromLoginProcessPage"];
+    echo '<script>alert("' . $message . '")</script>';
+    unset($_SESSION["MessageThatComeFromLoginProcessPage"]);
+  }
+  ?>
+
+<body>
+    <div class="container">
+    <header>
+      <img src="images/logo.png" alt="Logo" width="170px" height="170px">
+    </header>
+
+
+    <div class="registerTitle">
+      <h1>Login Form</h1>
+      <p>Please login to continue</p>
+    </div>
     
-?>
+    <hr />
 
-  <body>
-  <form id="sign_data" method="post" action="login_function.php">
-    <h2>LOGIN FORM </h2>
-        <div class="imgcontainer">
-          <img
-            src="images/logo.png"
-            alt="Avatar"
-            class="avatar"
-          />
-        </div>
-		
-		
-		
-        <div class="container">
-          <label for="username"><b>USERNAME</b></label>
+
+      <form id="sign_data" method="post" action="login_function.php">
+
+          <label for="username"><b>Username</b></label>
           <input
             id="username"
             type="text"
-            placeholder="ENTER USERNAME:"
+            placeholder="Enter username"
             name="username"
-			required
+            required
           />
-
-          <label for="password"><b>PASSWORD</b></label>
+          
+          <hr />
+            
+          <label for="password"><b>Password</b></label>
           <input
             id="password"
             type="password"
-            placeholder="ENTER PASSWORD:"
+            placeholder="Enter password"
             name="password"
             required
           />
 
-          <button type="submit">LOGIN</button>
-        </div>
+          <hr />
 
-        <div class="container" style="background-color: #f1f1f1"></div>
+            
+          <button type="submit" class="loginBtn">LOGIN</button>
       </form>
-			
+
     </div>
+
   </body>
 </html>
+    

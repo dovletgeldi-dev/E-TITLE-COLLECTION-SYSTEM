@@ -17,6 +17,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
 
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js" integrity="sha512-dQIiHSl2hr3NWKKLycPndtpbh5iaHLo6MwrXm7F0FM5e+kL2U16oE9uIwPHUl6fQBeCthiEuV/rzP3MiAB8Vfw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -26,19 +30,20 @@
 </head>
 
 <body>
-  <?php
-
-  if (isset($_POST["submit"])) {
+  <?php if (isset($_POST["submit"])) {
     $dispatch_nric = $_POST["dispatch_nric"];
     $dispatch_name = $_POST["dispatch_name"];
     $organization_name = $_POST["organization_name"];
     $dispatch_phone_no = $_POST["dispatch_phone_no"];
 
+    $errors = [];
 
-    $errors = array();
-
-
-    if (empty($dispatch_name) or empty($organization_name) or empty($dispatch_nric) or empty($dispatch_phone_no)) {
+    if (
+      empty($dispatch_name) or
+      empty($organization_name) or
+      empty($dispatch_nric) or
+      empty($dispatch_phone_no)
+    ) {
       array_push($errors, "<script>alert('All fields are required')</script>");
     }
 
@@ -48,7 +53,10 @@
     $rowCount = mysqli_num_rows($result);
 
     if ($rowCount > 0) {
-      array_push($errors, "<script>alert('Dispatch NRIC already exists!')</script>");
+      array_push(
+        $errors,
+        "<script>alert('Dispatch NRIC already exists!')</script>"
+      );
     }
 
     if (count($errors) > 0) {
@@ -56,11 +64,19 @@
         echo "<div>$error</div>";
       }
     } else {
-      $sql = "INSERT INTO dispatch (dispatch_nric, dispatch_name, dispatch_phone_no, organization_name) VALUES (?, ?, ?, ?)";
+      $sql =
+        "INSERT INTO dispatch (dispatch_nric, dispatch_name, dispatch_phone_no, organization_name) VALUES (?, ?, ?, ?)";
       $stmt = mysqli_stmt_init($conn);
       $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
       if ($prepareStmt) {
-        mysqli_stmt_bind_param($stmt, "ssss", $dispatch_nric, $dispatch_name, $dispatch_phone_no, $organization_name);
+        mysqli_stmt_bind_param(
+          $stmt,
+          "ssss",
+          $dispatch_nric,
+          $dispatch_name,
+          $dispatch_phone_no,
+          $organization_name
+        );
         mysqli_stmt_execute($stmt);
         header("Location: dispatchLogin.php");
         // echo "<script>alert('You registered successfully!')";
@@ -69,8 +85,7 @@
         die("Something went wrong");
       }
     }
-  }
-  ?>
+  } ?>
 
 
 
@@ -107,21 +122,22 @@
       <hr />
 
 
-      <h3 align="center">* Take a snapshot first and then click Save Picture & Register</h3>
+      <h3 align="center">* Take a snapshot first and then click Save Picture</h3>
       <div class="picture_container">
         <div class="picture_content">
           <label>Capture live photo</label>
           <div id="my_camera"></div>
           <input type="hidden" name="captured_image_data" id="captured_image_data">
 
-          <button type="button" class="snapshotBtn" onclick="take_snapshot();">Take Snapshot</button>
+          <button type="button" class="snapshotBtn" onclick="take_snapshot();">Take Snapshot <i class="fa fa-camera" style="font-size:18px"></i>
+</button>
         </div>
         <div class="picture_content">
           <label>Result</label>
           <div id="results">
             <img src="https://placehold.co/400x300?text=Captured image will be shown here" />
           </div>
-          <button type="button" class="submitBtn" onclick="this.disabled=true; this.value='Sending…'; saveSnap();">Save Picture & Register</button>
+          <button type="button" class="submitBtn" onclick="this.disabled=true; this.value='Sending…'; saveSnap();">Save Picture <i class="fa fa-save" style="font-size:20px;"></i></button>
         </div>
       </div>
       <!-- end container -->
