@@ -1,0 +1,171 @@
+:root {
+  --ff-accent: "Inter", sans-serif;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0 auto;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* General Styling */
+
+body {
+  font-family: var(--ff-accent);
+  max-width: 1440px;
+}
+
+.container {
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+p {
+  padding: 1rem 0;
+}
+
+form {
+  width: max-content;
+  margin: 0 auto;
+}
+
+fieldset {
+  border-radius: 10px;
+  text-align: left;
+  padding: 1rem;
+}
+
+legend {
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 1rem;
+}
+
+table {
+  text-align: center;
+  margin: 0 auto;
+  padding: 1rem;
+
+  border: 0;
+  border-radius: 10px;
+}
+
+th {
+  padding: 1rem;
+  background-color: #f59e0b;
+  border: 2px solid black;
+}
+
+td {
+  border: 2px solid black;
+  padding: 1rem;
+}
+
+/* Input */
+input {
+  /* width: 100%; */
+  padding: 0.7rem;
+  margin: 0 auto 1rem;
+  display: block;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: #f1f1f1;
+}
+
+input:focus {
+  background-color: white;
+  border: 2px solid #f59e0b;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Button */
+
+.searchBtn {
+  display: block;
+  background-color: #404040;
+  color: #f59e0b;
+
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 0.7rem 3rem;
+  margin: 2rem auto;
+
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.searchBtn:is(:hover, :focus) {
+  background-color: #f59e0b;
+  color: #404040;
+}

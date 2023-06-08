@@ -60,9 +60,13 @@
               <tbody>
                 <?php
                 // require_once "database.php";
-                $conn = mysqli_connect("localhost", "root", "", "etcs_database");
+                $conn = mysqli_connect(
+                  "localhost",
+                  "root",
+                  "",
+                  "etcs_database"
+                );
                 // $conn2 = mysqli_connect("localhost", "root", "", "webcam");
-
 
                 // if (isset($_GET['search'])) {
                 //   $filterValues = $_GET['search'];
@@ -71,32 +75,32 @@
                 //   // $query2 = "SELECT * FROM tb_image WHERE CONCAT(image) LIKE '%$filterValues%'";
                 // };
 
-                $queryJoin = "SELECT * FROM dispatch INNER JOIN tb_image ON dispatch.id=tb_image.id";
+                $queryJoin =
+                  "SELECT * FROM dispatch INNER JOIN tb_image ON dispatch.id=tb_image.id";
                 $query_run = mysqli_query($conn, $queryJoin);
 
-
-
                 if (mysqli_num_rows($query_run) > 0) {
-                  while ($row = mysqli_fetch_array($query_run)) {
-                ?>
+                  while ($row = mysqli_fetch_array($query_run)) { ?>
                     <tr>
-                      <td><?= $row['dispatch_nric']; ?></td>
-                      <td><?= $row['dispatch_name']; ?></td>
-                      <td><?= $row['dispatch_phone_no']; ?></td>
-                      <td><?= $row['organization_name']; ?></td>
-                      <td><img src="img/<?= $row['image']; ?>" width="300" height="200"></td>
+                      <td><?= $row["dispatch_nric"] ?></td>
+                      <td><?= $row["dispatch_name"] ?></td>
+                      <td><?= $row["dispatch_phone_no"] ?></td>
+                      <td><?= $row["organization_name"] ?></td>
+                      <td><img src="img/<?= $row[
+                        "image"
+                      ] ?>" width="300" height="200"></td>
                     </tr>
-                  <?php
-                  }
+                  <?php }
                 } else {
-                  ?>
+                   ?>
                   <tr>
                     <td colspan="5">No Record Found</td>
                   </tr>
                 <?php
                 }
-                // }
-                ?>
+
+// }
+?>
               </tbody>
             </table>
           </div>
