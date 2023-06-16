@@ -20,8 +20,9 @@
 <body>
   <div class="container">
   <header>
-      <img src="images/logo.png" alt="Logo" width="180px" height="180px">
+    <a href="main_page.php" style="display:block;width:180px"><img src="images/logo.png" alt="Logo" width="180px" height="180px"></a>
   </header>
+
     <h1 id="first_H" ><strong>Summary Report</strong></h1>
       <form id="sign_data" method="post" action="report_page_function.php">
         <fieldset>

@@ -115,6 +115,14 @@ hr {
   margin-bottom: 25px;
 }
 
+header a {
+  border: 0;
+}
+
+header a:hover {
+  border: 0;
+}
+
 a {
   text-decoration: none;
   color: inherit;

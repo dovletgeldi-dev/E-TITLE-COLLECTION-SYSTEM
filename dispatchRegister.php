@@ -92,7 +92,7 @@
 
   <div class="container">
     <header>
-      <img src="images/logo.png" alt="Logo" width="180px" height="180px">
+      <a href="main_page.php" style="display:block;width:180px"><img src="images/logo.png" alt="Logo" width="180px" height="180px"></a>
     </header>
 
     <div class="registerTitle">

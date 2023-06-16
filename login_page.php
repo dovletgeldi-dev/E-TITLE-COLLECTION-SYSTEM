@@ -35,7 +35,7 @@
 <body>
     <div class="container">
     <header>
-      <img src="images/logo.png" alt="Logo" width="170px" height="170px">
+      <a href="main_page.php" style="display:block;width:170px"><img src="images/logo.png" alt="Logo" width="170px" height="170px"></a>
     </header>
 
 

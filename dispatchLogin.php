@@ -24,7 +24,7 @@
   <div class="container">
 
     <header>
-      <img src="images/logo.png" alt="Logo" width="180px" height="180px">
+      <a href="main_page.php" style="display:block;width:180px"><img src="images/logo.png" alt="Logo" width="180px" height="180px"></a>
     </header>
 
 
@@ -40,8 +40,7 @@
       <label for="dispatch_nric"><b>NRIC Number:</b></label>
       <input type="text" placeholder="YYMMDDPB###G" name="dispatch_nric" id="dispatch_nric" minlength="12" maxlength="12" required />
 
-      <?php
-      if (isset($_POST["login"])) {
+      <?php if (isset($_POST["login"])) {
         $dispatch_nric = $_POST["dispatch_nric"];
 
         require_once "database.php";
@@ -56,9 +55,7 @@
         } else {
           echo "<div class='error-msg'>This NRIC does not match</div>";
         }
-      }
-
-      ?>
+      } ?>
 
 
       <hr />
