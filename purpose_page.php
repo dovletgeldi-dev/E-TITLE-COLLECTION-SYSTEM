@@ -21,7 +21,7 @@
   <div class="container">
 
   <header>
-    <a href="main_page.php" style="display:block;width:170px"><img src="images/logo.png" alt="Logo" width="170px" height="170px"></a>
+      <img src="images/logo.png" alt="Logo" width="170px" height="170px">
   </header>
 
     <div class="registerTitle">
@@ -42,10 +42,10 @@
       
       <label for="collection"><b>(A) Collection of Title</b></label><br>
       
-      <input type="text" id="nameofdeveloper" name="nameofdeveloper" placeholder="Name of Developer:" minlength="1" maxlength="50" required><br>
-      <input type="text" id="titleid" name="titleid" placeholder="Title's ID:" minlength="1" maxlength="10" required><br>
-      <input type="text" id="titlename" name="titlename" placeholder="Title's Name:" minlength="1" maxlength="50" required><br>
-      <input type="text" id="documentname" name="documentname" placeholder="Document's Name:" minlength="1" maxlength="50" required><br>
+      <input type="text" id="nameofdeveloper" name="nameofdeveloper" placeholder="Name of Developer:" minlength="1" maxlength="100" required><br>
+      <input type="text" id="titleid" name="titleid" placeholder="Title's No.:" minlength="1" maxlength="20" required><br>
+      <input type="text" id="titlename" name="titlename" placeholder="Project's Name:" minlength="1" maxlength="100" required><br>
+      <input type="text" id="documentname" name="documentname" placeholder="Others:" minlength="1" maxlength="100" required><br>
 
       <hr />
 
