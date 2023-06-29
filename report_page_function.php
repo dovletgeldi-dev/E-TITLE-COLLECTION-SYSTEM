@@ -99,9 +99,9 @@ if (isset($_POST["search"])) {
             } else {
               echo "<table border = \"1\">\n";
               echo "<tr>\n" .
-                "<th scope = \"col\">Title's ID</th>\n " .
-                "<th scope = \"col\">Title's Name</th>\n " .
-                "<th scope = \"col\">Document's Name </th>\n " .
+                "<th scope = \"col\">Title's No</th>\n " .
+                "<th scope = \"col\">Project's Name</th>\n " .
+                "<th scope = \"col\">Others</th>\n " .
                 "<th scope = \"col\">Date Collected</th>\n " .
                 "<th scope = \"col\">Dispatch's NRIC</th>\n " .
                 "</tr>\n";
